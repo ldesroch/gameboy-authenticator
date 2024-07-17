@@ -1,0 +1,19 @@
+{
+  "realm" : "test",
+  "users" : [ {
+    "id" : "982113ff-73df-4ced-a792-b1f1a9b199a2",
+    "createdTimestamp" : 1719906304163,
+    "username" : "test",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "",
+    "lastName" : "",
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-test" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}

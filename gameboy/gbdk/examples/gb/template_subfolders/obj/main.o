@@ -1,0 +1,40 @@
+XL3
+H 9 areas 9 global symbols
+M main
+O -msm83
+S _dungeon_mapPLN0 Ref000000
+S _dungeon_tiles Ref000000
+S _vsync Ref000000
+S .__.ABS. Def000000
+S _LCDC_REG Ref000000
+S _set_bkg_data Ref000000
+S _set_bkg_tiles Ref000000
+A _CODE size 2C flags 0 addr 0
+S _main Def000024
+S _init_gfx Def000000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 11 00 00 D5 21 00 4F E5 CD 00 00 E8 04
+R 00 00 00 00 02 04 01 00 02 0C 05 00
+T 0D 00 00 11 00 00 D5 21 20 20 E5 AF 0F F5 CD
+R 00 00 00 00 02 04 00 00
+T 19 00 00 00 00 E8 06 F0 00 00 00 F6 01 E0
+R 00 00 00 00 02 03 06 00 0B 08 04 00
+T 22 00 00 00 00 00 C9
+R 00 00 00 00 0B 03 04 00
+T 24 00 00
+R 00 00 00 00
+T 24 00 00 CD 00 00
+R 00 00 00 00 00 04 00 00
+T 27 00 00
+R 00 00 00 00
+T 27 00 00 CD 00 00 18 FB
+R 00 00 00 00 02 04 02 00

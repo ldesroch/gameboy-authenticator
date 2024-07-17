@@ -1,0 +1,61 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 1
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000000 L
+  7 C$test_pattern_short.c$13$1_0$139                           =  000000 GR
+  7 C$test_pattern_short.c$14$1_0$141                           =  0008C0 GR
+  7 C$test_pattern_short.c$15$1_0$143                           =  00094C GR
+  7 C$test_pattern_short.c$16$1_0$145                           =  0009D8 GR
+  7 C$test_pattern_short.c$5$0_0$134                            =  000000 GR
+  7 G$__func_test_pattern_short$0$0                             =  000000 GR
+  7 G$__func_test_pattern_short_attr$0$0                        =  00094C GR
+  7 G$__func_test_pattern_short_map$0$0                         =  0008C0 GR
+  7 G$__func_test_pattern_short_palette$0$0                     =  0009D8 GR
+  7 G$__func_test_pattern_short_tiles$0$0                       =  000000 GR
+  7 G$test_pattern_short_data$0_0$0                             =  0010F9 GR
+    ___bank_test_pattern_short                                  =  0000FF G
+    ___bank_test_pattern_short_attr                             =  0000FF G
+    ___bank_test_pattern_short_map                              =  0000FF G
+    ___bank_test_pattern_short_palette                          =  0000FF G
+    ___bank_test_pattern_short_tiles                            =  0000FF G
+  7 ___func_test_pattern_short                                     000000 GR
+  7 ___func_test_pattern_short_attr                                00094C GR
+  7 ___func_test_pattern_short_map                                 0008C0 GR
+  7 ___func_test_pattern_short_palette                             0009D8 GR
+  7 ___func_test_pattern_short_tiles                               000000 GR
+    ___size_test_pattern_short_attr                             =  00008C G
+    ___size_test_pattern_short_map                              =  00008C G
+    ___size_test_pattern_short_palette                          =  000721 G
+    ___size_test_pattern_short_tiles                            =  0008C0 G
+  7 _test_pattern_short_attr                                       00094C GR
+  7 _test_pattern_short_data                                       0010F9 GR
+  7 _test_pattern_short_map                                        0008C0 GR
+  7 _test_pattern_short_palette                                    0009D8 GR
+  7 _test_pattern_short_tiles                                      000000 GR
+    b___func_test_pattern_short                                 =  0000FF L
+    b___func_test_pattern_short_attr                            =  0000FF L
+    b___func_test_pattern_short_map                             =  0000FF L
+    b___func_test_pattern_short_palette                         =  0000FF L
+    b___func_test_pattern_short_tiles                           =  0000FF L
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 2
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size      0   flags    0
+   1 _DATA                                      size      0   flags    0
+   2 _INITIALIZED                               size      0   flags    0
+   3 _DABS                                      size      0   flags    8
+   4 _HOME                                      size      0   flags    0
+   5 _GSINIT                                    size      0   flags    0
+   6 _GSFINAL                                   size      0   flags    0
+   7 _CODE_255                                  size   1104   flags    0
+   8 _INITIALIZER                               size      0   flags    0
+   9 _CABS                                      size      0   flags    8
+

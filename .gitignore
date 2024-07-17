@@ -1,0 +1,6 @@
+deployments
+.idea
+*.iml
+data
+data-old
+.vscode

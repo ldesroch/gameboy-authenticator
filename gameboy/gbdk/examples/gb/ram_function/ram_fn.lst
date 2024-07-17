@@ -1,0 +1,238 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler 
+                                      3 ; Version 4.3.2 #14228 (Linux)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module ram_fn
+                                      6 	.optsdcc -msm83
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _main
+                                     12 	.globl _print_counter
+                                     13 	.globl _inc_hiram
+                                     14 	.globl _inc_ram
+                                     15 	.globl _inc_end
+                                     16 	.globl _inc
+                                     17 	.globl _memcpy
+                                     18 	.globl _puts
+                                     19 	.globl _printf
+                                     20 	.globl _hiramcpy
+                                     21 	.globl _inc_hiram_var
+                                     22 	.globl _inc_ram_var
+                                     23 	.globl _counter
+                                     24 	.globl _hiram_buffer
+                                     25 	.globl _ram_buffer
+                                     26 ;--------------------------------------------------------
+                                     27 ; special function registers
+                                     28 ;--------------------------------------------------------
+                                     29 ;--------------------------------------------------------
+                                     30 ; ram data
+                                     31 ;--------------------------------------------------------
+                                     32 	.area _DATA
+                           00D000    33 _ram_buffer	=	0xd000
+                           00FFA0    34 _hiram_buffer	=	0xffa0
+                                     35 ;--------------------------------------------------------
+                                     36 ; ram data
+                                     37 ;--------------------------------------------------------
+                                     38 	.area _INITIALIZED
+      000000                         39 _counter::
+      000000                         40 	.ds 2
+      000002                         41 _inc_ram_var::
+      000002                         42 	.ds 2
+      000004                         43 _inc_hiram_var::
+      000004                         44 	.ds 2
+                                     45 ;--------------------------------------------------------
+                                     46 ; absolute external ram data
+                                     47 ;--------------------------------------------------------
+                                     48 	.area _DABS (ABS)
+                                     49 ;--------------------------------------------------------
+                                     50 ; global & static initialisations
+                                     51 ;--------------------------------------------------------
+                                     52 	.area _HOME
+                                     53 	.area _GSINIT
+                                     54 	.area _GSFINAL
+                                     55 	.area _GSINIT
+                                     56 ;--------------------------------------------------------
+                                     57 ; Home
+                                     58 ;--------------------------------------------------------
+                                     59 	.area _HOME
+                                     60 	.area _HOME
+                                     61 ;--------------------------------------------------------
+                                     62 ; code
+                                     63 ;--------------------------------------------------------
+                                     64 	.area _CODE
+                                     65 ;ram_fn.c:9: void inc(void) {
+                                     66 ;	---------------------------------
+                                     67 ; Function inc
+                                     68 ; ---------------------------------
+      000000                         69 _inc::
+                                     70 ;ram_fn.c:10: counter++;
+      000000 21r00r00         [12]   71 	ld	hl, #_counter
+      000003 34               [12]   72 	inc	(hl)
+      000004 C0               [20]   73 	ret	NZ
+      000005 23               [ 8]   74 	inc	hl
+      000006 34               [12]   75 	inc	(hl)
+                                     76 ;ram_fn.c:11: }
+      000007 C9               [16]   77 	ret
+                                     78 ;ram_fn.c:13: void inc_end(void) {} 
+                                     79 ;	---------------------------------
+                                     80 ; Function inc_end
+                                     81 ; ---------------------------------
+      000008                         82 _inc_end::
+      000008 C9               [16]   83 	ret
+                                     84 ;ram_fn.c:32: void print_counter(void) {
+                                     85 ;	---------------------------------
+                                     86 ; Function print_counter
+                                     87 ; ---------------------------------
+      000009                         88 _print_counter::
+                                     89 ;ram_fn.c:33: printf(" Counter is %u\n", counter);
+      000009 21r00r00         [12]   90 	ld	hl, #_counter
+      00000C 2A               [ 8]   91 	ld	a, (hl+)
+      00000D 5F               [ 4]   92 	ld	e, a
+      00000E 56               [ 8]   93 	ld	d, (hl)
+      00000F D5               [16]   94 	push	de
+      000010 11r1Ar00         [12]   95 	ld	de, #___str_0
+      000013 D5               [16]   96 	push	de
+      000014 CDr00r00         [24]   97 	call	_printf
+      000017 E8 04            [16]   98 	add	sp, #4
+                                     99 ;ram_fn.c:34: }
+      000019 C9               [16]  100 	ret
+      00001A                        101 ___str_0:
+      00001A 20 43 6F 75 6E 74 65   102 	.ascii " Counter is %u"
+             72 20 69 73 20 25 75
+      000028 0A                     103 	.db 0x0a
+      000029 00                     104 	.db 0x00
+                                    105 ;ram_fn.c:36: void main(void) {
+                                    106 ;	---------------------------------
+                                    107 ; Function main
+                                    108 ; ---------------------------------
+      00002A                        109 _main::
+                                    110 ;ram_fn.c:38: hiramcpy((uint8_t)&hiram_buffer, (void *)&inc, (uint8_t)object_distance(inc, inc_end));
+      00002A 3Er08            [ 8]  111 	ld	a, #<(_inc_end)
+      00002C 01r00r00         [12]  112 	ld	bc, #_inc
+      00002F 59               [ 4]  113 	ld	e, c
+      000030 93               [ 4]  114 	sub	a, e
+      000031 57               [ 4]  115 	ld	d, a
+      000032 3Er00            [ 8]  116 	ld	a, #<(_hiram_buffer)
+      000034 D5               [16]  117 	push	de
+      000035 33               [ 8]  118 	inc	sp
+      000036 C5               [16]  119 	push	bc
+      000037 F5               [16]  120 	push	af
+      000038 33               [ 8]  121 	inc	sp
+      000039 CDr00r00         [24]  122 	call	_hiramcpy
+      00003C E8 04            [16]  123 	add	sp, #4
+                                    124 ;ram_fn.c:39: memcpy(&ram_buffer, (void *)&inc, (uint16_t)object_distance(inc, inc_end));
+      00003E 3Er08            [ 8]  125 	ld	a, #<(_inc_end)
+      000040 16s00            [ 8]  126 	ld	d, #>(_inc_end)
+      000042 01r00r00         [12]  127 	ld	bc, #_inc
+      000045 91               [ 4]  128 	sub	a, c
+      000046 5F               [ 4]  129 	ld	e, a
+      000047 7A               [ 4]  130 	ld	a, d
+      000048 98               [ 4]  131 	sbc	a, b
+      000049 57               [ 4]  132 	ld	d, a
+      00004A D5               [16]  133 	push	de
+      00004B 11r00r00         [12]  134 	ld	de, #_ram_buffer
+      00004E CDr00r00         [24]  135 	call	_memcpy
+                                    136 ;ram_fn.c:42: puts("Program Start...");
+      000051 11rACr00         [12]  137 	ld	de, #___str_1
+      000054 CDr00r00         [24]  138 	call	_puts
+                                    139 ;ram_fn.c:43: print_counter();
+      000057 CDr09r00         [24]  140 	call	_print_counter
+                                    141 ;ram_fn.c:46: puts("Call ROM");
+      00005A 11rBDr00         [12]  142 	ld	de, #___str_2
+      00005D CDr00r00         [24]  143 	call	_puts
+                                    144 ;ram_fn.c:47: inc();
+      000060 CDr00r00         [24]  145 	call	_inc
+                                    146 ;ram_fn.c:48: print_counter();
+      000063 CDr09r00         [24]  147 	call	_print_counter
+                                    148 ;ram_fn.c:51: puts("Call RAM direct");
+      000066 11rC6r00         [12]  149 	ld	de, #___str_3
+      000069 CDr00r00         [24]  150 	call	_puts
+                                    151 ;ram_fn.c:52: inc_ram();
+      00006C CDr00r00         [24]  152 	call	_inc_ram
+                                    153 ;ram_fn.c:53: print_counter();
+      00006F CDr09r00         [24]  154 	call	_print_counter
+                                    155 ;ram_fn.c:56: puts("Call RAM indirect");
+      000072 11rD6r00         [12]  156 	ld	de, #___str_4
+      000075 CDr00r00         [24]  157 	call	_puts
+                                    158 ;ram_fn.c:57: inc_ram_var();
+      000078 21r02r00         [12]  159 	ld	hl, #_inc_ram_var
+      00007B 6E               [ 8]  160 	ld	l, (hl)
+                                    161 ;	spillPairReg hl
+                                    162 ;	spillPairReg hl
+      00007C FAr03r00         [16]  163 	ld	a, (_inc_ram_var + 1)
+      00007F 67               [ 4]  164 	ld	h, a
+                                    165 ;	spillPairReg hl
+                                    166 ;	spillPairReg hl
+      000080 CDr00r00         [24]  167 	call	___sdcc_call_hl
+                                    168 ;ram_fn.c:58: print_counter();
+      000083 CDr09r00         [24]  169 	call	_print_counter
+                                    170 ;ram_fn.c:61: puts("Call HIRAM direct");
+      000086 11rE8r00         [12]  171 	ld	de, #___str_5
+      000089 CDr00r00         [24]  172 	call	_puts
+                                    173 ;ram_fn.c:62: inc_hiram();
+      00008C CDr00r00         [24]  174 	call	_inc_hiram
+                                    175 ;ram_fn.c:63: print_counter();
+      00008F CDr09r00         [24]  176 	call	_print_counter
+                                    177 ;ram_fn.c:66: puts("Call HIRAM indirect");
+      000092 11rFAr00         [12]  178 	ld	de, #___str_6
+      000095 CDr00r00         [24]  179 	call	_puts
+                                    180 ;ram_fn.c:67: inc_hiram_var();
+      000098 21r04r00         [12]  181 	ld	hl, #_inc_hiram_var
+      00009B 6E               [ 8]  182 	ld	l, (hl)
+                                    183 ;	spillPairReg hl
+                                    184 ;	spillPairReg hl
+      00009C FAr05r00         [16]  185 	ld	a, (_inc_hiram_var + 1)
+      00009F 67               [ 4]  186 	ld	h, a
+                                    187 ;	spillPairReg hl
+                                    188 ;	spillPairReg hl
+      0000A0 CDr00r00         [24]  189 	call	___sdcc_call_hl
+                                    190 ;ram_fn.c:68: print_counter();
+      0000A3 CDr09r00         [24]  191 	call	_print_counter
+                                    192 ;ram_fn.c:70: puts("The End...");
+      0000A6 11r0Er01         [12]  193 	ld	de, #___str_7
+                                    194 ;ram_fn.c:71: }
+      0000A9 C3r00r00         [16]  195 	jp	_puts
+      0000AC                        196 ___str_1:
+      0000AC 50 72 6F 67 72 61 6D   197 	.ascii "Program Start..."
+             20 53 74 61 72 74 2E
+             2E 2E
+      0000BC 00                     198 	.db 0x00
+      0000BD                        199 ___str_2:
+      0000BD 43 61 6C 6C 20 52 4F   200 	.ascii "Call ROM"
+             4D
+      0000C5 00                     201 	.db 0x00
+      0000C6                        202 ___str_3:
+      0000C6 43 61 6C 6C 20 52 41   203 	.ascii "Call RAM direct"
+             4D 20 64 69 72 65 63
+             74
+      0000D5 00                     204 	.db 0x00
+      0000D6                        205 ___str_4:
+      0000D6 43 61 6C 6C 20 52 41   206 	.ascii "Call RAM indirect"
+             4D 20 69 6E 64 69 72
+             65 63 74
+      0000E7 00                     207 	.db 0x00
+      0000E8                        208 ___str_5:
+      0000E8 43 61 6C 6C 20 48 49   209 	.ascii "Call HIRAM direct"
+             52 41 4D 20 64 69 72
+             65 63 74
+      0000F9 00                     210 	.db 0x00
+      0000FA                        211 ___str_6:
+      0000FA 43 61 6C 6C 20 48 49   212 	.ascii "Call HIRAM indirect"
+             52 41 4D 20 69 6E 64
+             69 72 65 63 74
+      00010D 00                     213 	.db 0x00
+      00010E                        214 ___str_7:
+      00010E 54 68 65 20 45 6E 64   215 	.ascii "The End..."
+             2E 2E 2E
+      000118 00                     216 	.db 0x00
+                                    217 	.area _CODE
+                                    218 	.area _INITIALIZER
+      000000                        219 __xinit__counter:
+      000000 00 00                  220 	.dw #0x0000
+      000002                        221 __xinit__inc_ram_var:
+      000002r00r00                  222 	.dw _ram_buffer
+      000004                        223 __xinit__inc_hiram_var:
+      000004r00r00                  224 	.dw _hiram_buffer
+                                    225 	.area _CABS (ABS)

@@ -1,0 +1,130 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler 
+                                      3 ; Version 4.3.2 #14228 (Linux)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module samptest
+                                      6 	.optsdcc -msm83
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _main
+                                     12 	.globl b_play_sample2
+                                     13 	.globl _play_sample2
+                                     14 	.globl b_play_sample1
+                                     15 	.globl _play_sample1
+                                     16 	.globl _play_isr
+                                     17 	.globl _puts
+                                     18 	.globl _vsync
+                                     19 	.globl _set_interrupts
+                                     20 	.globl _joypad
+                                     21 	.globl _add_TIM
+                                     22 ;--------------------------------------------------------
+                                     23 ; special function registers
+                                     24 ;--------------------------------------------------------
+                                     25 ;--------------------------------------------------------
+                                     26 ; ram data
+                                     27 ;--------------------------------------------------------
+                                     28 	.area _DATA
+                                     29 ;--------------------------------------------------------
+                                     30 ; ram data
+                                     31 ;--------------------------------------------------------
+                                     32 	.area _INITIALIZED
+                                     33 ;--------------------------------------------------------
+                                     34 ; absolute external ram data
+                                     35 ;--------------------------------------------------------
+                                     36 	.area _DABS (ABS)
+                                     37 ;--------------------------------------------------------
+                                     38 ; global & static initialisations
+                                     39 ;--------------------------------------------------------
+                                     40 	.area _HOME
+                                     41 	.area _GSINIT
+                                     42 	.area _GSFINAL
+                                     43 	.area _GSINIT
+                                     44 ;--------------------------------------------------------
+                                     45 ; Home
+                                     46 ;--------------------------------------------------------
+                                     47 	.area _HOME
+                                     48 	.area _HOME
+                                     49 ;--------------------------------------------------------
+                                     50 ; code
+                                     51 ;--------------------------------------------------------
+                                     52 	.area _CODE
+                                     53 ;src/samptest.c:10: void main(void)
+                                     54 ;	---------------------------------
+                                     55 ; Function main
+                                     56 ; ---------------------------------
+      000000                         57 _main::
+                                     58 ;src/samptest.c:13: NR52_REG = 0x80u;
+      000000 3E 80            [ 8]   59 	ld	a, #0x80
+      000002 E0r00            [12]   60 	ldh	(_NR52_REG + 0), a
+                                     61 ;src/samptest.c:14: NR51_REG = 0xffu;
+      000004 3E FF            [ 8]   62 	ld	a, #0xff
+      000006 E0r00            [12]   63 	ldh	(_NR51_REG + 0), a
+                                     64 ;src/samptest.c:15: NR50_REG = 0x77u;
+      000008 3E 77            [ 8]   65 	ld	a, #0x77
+      00000A E0r00            [12]   66 	ldh	(_NR50_REG + 0), a
+                                     67 ;src/samptest.c:21: }
+      00000C F3               [ 4]   68 	di
+                                     69 ;src/samptest.c:18: TMA_REG = 0xC0u, TAC_REG = 0x07u;
+      00000D 3E C0            [ 8]   70 	ld	a, #0xc0
+      00000F E0r00            [12]   71 	ldh	(_TMA_REG + 0), a
+      000011 3E 07            [ 8]   72 	ld	a, #0x07
+      000013 E0r00            [12]   73 	ldh	(_TAC_REG + 0), a
+                                     74 ;src/samptest.c:19: add_TIM(play_isr);    
+      000015 11r00r00         [12]   75 	ld	de, #_play_isr
+      000018 CDr00r00         [24]   76 	call	_add_TIM
+                                     77 ;src/samptest.c:20: set_interrupts(VBL_IFLAG | TIM_IFLAG);
+      00001B 3E 05            [ 8]   78 	ld	a, #0x05
+      00001D CDr00r00         [24]   79 	call	_set_interrupts
+      000020 FB               [ 4]   80 	ei
+                                     81 ;src/samptest.c:23: puts("PRESS A/B TO PLAY\n");
+      000021 11r5Fr00         [12]   82 	ld	de, #___str_0
+      000024 CDr00r00         [24]   83 	call	_puts
+                                     84 ;src/samptest.c:25: while(1)
+      000027                         85 00113$:
+                                     86 ;src/samptest.c:27: UINT8 j = joypad();
+      000027 CDr00r00         [24]   87 	call	_joypad
+                                     88 ;src/samptest.c:28: if (j & J_A) {
+      00002A CB 67            [ 8]   89 	bit	4, a
+      00002C 28 14            [12]   90 	jr	Z, 00110$
+                                     91 ;src/samptest.c:29: play_sample1();
+      00002E 1Er00            [ 8]   92 	ld	e, #b_play_sample1
+      000030 21r00r00         [12]   93 	ld	hl, #_play_sample1
+      000033 CDr00r00         [24]   94 	call	___sdcc_bcall_ehl
+                                     95 ;src/samptest.c:30: while (joypad() & J_A) vsync();
+      000036                         96 00101$:
+      000036 CDr00r00         [24]   97 	call	_joypad
+      000039 CB 67            [ 8]   98 	bit	4, a
+      00003B 28 1D            [12]   99 	jr	Z, 00111$
+      00003D CDr00r00         [24]  100 	call	_vsync
+      000040 18 F4            [12]  101 	jr	00101$
+      000042                        102 00110$:
+                                    103 ;src/samptest.c:32: if (j & J_B) {
+      000042 CB 6F            [ 8]  104 	bit	5, a
+      000044 28 14            [12]  105 	jr	Z, 00111$
+                                    106 ;src/samptest.c:33: play_sample2();
+      000046 1Er00            [ 8]  107 	ld	e, #b_play_sample2
+      000048 21r00r00         [12]  108 	ld	hl, #_play_sample2
+      00004B CDr00r00         [24]  109 	call	___sdcc_bcall_ehl
+                                    110 ;src/samptest.c:34: while (joypad() & J_B) vsync();
+      00004E                        111 00104$:
+      00004E CDr00r00         [24]  112 	call	_joypad
+      000051 CB 6F            [ 8]  113 	bit	5, a
+      000053 28 05            [12]  114 	jr	Z, 00111$
+      000055 CDr00r00         [24]  115 	call	_vsync
+      000058 18 F4            [12]  116 	jr	00104$
+      00005A                        117 00111$:
+                                    118 ;src/samptest.c:36: vsync();
+      00005A CDr00r00         [24]  119 	call	_vsync
+                                    120 ;src/samptest.c:38: }
+      00005D 18 C8            [12]  121 	jr	00113$
+      00005F                        122 ___str_0:
+      00005F 50 52 45 53 53 20 41   123 	.ascii "PRESS A/B TO PLAY"
+             2F 42 20 54 4F 20 50
+             4C 41 59
+      000070 0A                     124 	.db 0x0a
+      000071 00                     125 	.db 0x00
+                                    126 	.area _CODE
+                                    127 	.area _INITIALIZER
+                                    128 	.area _CABS (ABS)

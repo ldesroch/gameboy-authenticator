@@ -1,0 +1,61 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 1
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000000 L
+  7 C$test_pattern_tall.c$13$1_0$139                            =  000000 GR
+  7 C$test_pattern_tall.c$14$1_0$141                            =  001B20 GR
+  7 C$test_pattern_tall.c$15$1_0$143                            =  001D14 GR
+  7 C$test_pattern_tall.c$16$1_0$145                            =  001F08 GR
+  7 C$test_pattern_tall.c$5$0_0$134                             =  000000 GR
+  7 G$__func_test_pattern_tall$0$0                              =  000000 GR
+  7 G$__func_test_pattern_tall_attr$0$0                         =  001D14 GR
+  7 G$__func_test_pattern_tall_map$0$0                          =  001B20 GR
+  7 G$__func_test_pattern_tall_palette$0$0                      =  001F08 GR
+  7 G$__func_test_pattern_tall_tiles$0$0                        =  000000 GR
+  7 G$test_pattern_tall_data$0_0$0                              =  003829 GR
+    ___bank_test_pattern_tall                                   =  0000FF G
+    ___bank_test_pattern_tall_attr                              =  0000FF G
+    ___bank_test_pattern_tall_map                               =  0000FF G
+    ___bank_test_pattern_tall_palette                           =  0000FF G
+    ___bank_test_pattern_tall_tiles                             =  0000FF G
+  7 ___func_test_pattern_tall                                      000000 GR
+  7 ___func_test_pattern_tall_attr                                 001D14 GR
+  7 ___func_test_pattern_tall_map                                  001B20 GR
+  7 ___func_test_pattern_tall_palette                              001F08 GR
+  7 ___func_test_pattern_tall_tiles                                000000 GR
+    ___size_test_pattern_tall_attr                              =  0001F4 G
+    ___size_test_pattern_tall_map                               =  0001F4 G
+    ___size_test_pattern_tall_palette                           =  001921 G
+    ___size_test_pattern_tall_tiles                             =  001B20 G
+  7 _test_pattern_tall_attr                                        001D14 GR
+  7 _test_pattern_tall_data                                        003829 GR
+  7 _test_pattern_tall_map                                         001B20 GR
+  7 _test_pattern_tall_palette                                     001F08 GR
+  7 _test_pattern_tall_tiles                                       000000 GR
+    b___func_test_pattern_tall                                  =  0000FF L
+    b___func_test_pattern_tall_attr                             =  0000FF L
+    b___func_test_pattern_tall_map                              =  0000FF L
+    b___func_test_pattern_tall_palette                          =  0000FF L
+    b___func_test_pattern_tall_tiles                            =  0000FF L
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 2
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size      0   flags    0
+   1 _DATA                                      size      0   flags    0
+   2 _INITIALIZED                               size      0   flags    0
+   3 _DABS                                      size      0   flags    8
+   4 _HOME                                      size      0   flags    0
+   5 _GSINIT                                    size      0   flags    0
+   6 _GSFINAL                                   size      0   flags    0
+   7 _CODE_255                                  size   3834   flags    0
+   8 _INITIALIZER                               size      0   flags    0
+   9 _CABS                                      size      0   flags    8
+

@@ -1,0 +1,111 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler 
+                                      3 ; Version 4.3.2 #14228 (Linux)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module main
+                                      6 	.optsdcc -msm83
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _main
+                                     12 	.globl _draw_image
+                                     13 	.globl _set_bkg_palette
+                                     14 	.globl _vsync
+                                     15 	.globl _cgb_pal_black
+                                     16 ;--------------------------------------------------------
+                                     17 ; special function registers
+                                     18 ;--------------------------------------------------------
+                                     19 ;--------------------------------------------------------
+                                     20 ; ram data
+                                     21 ;--------------------------------------------------------
+                                     22 	.area _DATA
+                                     23 ;--------------------------------------------------------
+                                     24 ; ram data
+                                     25 ;--------------------------------------------------------
+                                     26 	.area _INITIALIZED
+                                     27 ;--------------------------------------------------------
+                                     28 ; absolute external ram data
+                                     29 ;--------------------------------------------------------
+                                     30 	.area _DABS (ABS)
+                                     31 ;--------------------------------------------------------
+                                     32 ; global & static initialisations
+                                     33 ;--------------------------------------------------------
+                                     34 	.area _HOME
+                                     35 	.area _GSINIT
+                                     36 	.area _GSFINAL
+                                     37 	.area _GSINIT
+                                     38 ;--------------------------------------------------------
+                                     39 ; Home
+                                     40 ;--------------------------------------------------------
+                                     41 	.area _HOME
+                                     42 	.area _HOME
+                                     43 ;--------------------------------------------------------
+                                     44 ; code
+                                     45 ;--------------------------------------------------------
+                                     46 	.area _CODE
+                                     47 ;src/main.c:13: void main(void)
+                                     48 ;	---------------------------------
+                                     49 ; Function main
+                                     50 ; ---------------------------------
+      000000                         51 _main::
+                                     52 ;src/main.c:16: if (_cpu == CGB_TYPE) {
+      000000 FAr00r00         [16]   53 	ld	a, (#__cpu)
+      000003 D6 11            [ 8]   54 	sub	a, #0x11
+      000005 20 0E            [12]   55 	jr	NZ, 00102$
+                                     56 ;src/main.c:17: set_bkg_palette(BKGF_CGB_PAL0, CGB_ONE_PAL, cgb_pal_black);
+      000007 11r48r00         [12]   57 	ld	de, #_cgb_pal_black
+      00000A D5               [16]   58 	push	de
+      00000B AF               [ 4]   59 	xor	a, a
+      00000C 3C               [ 4]   60 	inc	a
+      00000D F5               [16]   61 	push	af
+      00000E CDr00r00         [24]   62 	call	_set_bkg_palette
+      000011 E8 04            [16]   63 	add	sp, #4
+      000013 18 04            [12]   64 	jr	00103$
+      000015                         65 00102$:
+                                     66 ;src/main.c:19: BGP_REG = DMG_PALETTE(DMG_BLACK, DMG_BLACK, DMG_BLACK, DMG_BLACK);
+      000015 3E FF            [ 8]   67 	ld	a, #0xff
+      000017 E0r00            [12]   68 	ldh	(_BGP_REG + 0), a
+      000019                         69 00103$:
+                                     70 ;src/main.c:25: draw_image(scenery_tiles);
+      000019 11r00r00         [12]   71 	ld	de, #_scenery_tiles
+      00001C D5               [16]   72 	push	de
+      00001D CDr00r00         [24]   73 	call	_draw_image
+      000020 E1               [12]   74 	pop	hl
+                                     75 ;src/main.c:26: SHOW_BKG;
+      000021 F0r00            [12]   76 	ldh	a, (_LCDC_REG + 0)
+      000023 F6 01            [ 8]   77 	or	a, #0x01
+      000025 E0r00            [12]   78 	ldh	(_LCDC_REG + 0), a
+                                     79 ;src/main.c:29: vsync();
+      000027 CDr00r00         [24]   80 	call	_vsync
+                                     81 ;src/main.c:30: if (_cpu == CGB_TYPE) {
+      00002A FAr00r00         [16]   82 	ld	a, (#__cpu)
+      00002D D6 11            [ 8]   83 	sub	a, #0x11
+      00002F 20 0E            [12]   84 	jr	NZ, 00105$
+                                     85 ;src/main.c:31: set_bkg_palette(BKGF_CGB_PAL0, CGB_ONE_PAL, scenery_palettes);
+      000031 11r00r00         [12]   86 	ld	de, #_scenery_palettes
+      000034 D5               [16]   87 	push	de
+      000035 AF               [ 4]   88 	xor	a, a
+      000036 3C               [ 4]   89 	inc	a
+      000037 F5               [16]   90 	push	af
+      000038 CDr00r00         [24]   91 	call	_set_bkg_palette
+      00003B E8 04            [16]   92 	add	sp, #4
+      00003D 18 04            [12]   93 	jr	00108$
+      00003F                         94 00105$:
+                                     95 ;src/main.c:33: BGP_REG = DMG_PALETTE(DMG_WHITE, DMG_LITE_GRAY, DMG_DARK_GRAY, DMG_BLACK);
+      00003F 3E E4            [ 8]   96 	ld	a, #0xe4
+      000041 E0r00            [12]   97 	ldh	(_BGP_REG + 0), a
+                                     98 ;src/main.c:38: while(1) {
+      000043                         99 00108$:
+                                    100 ;src/main.c:41: vsync();
+      000043 CDr00r00         [24]  101 	call	_vsync
+                                    102 ;src/main.c:43: }
+      000046 18 FB            [12]  103 	jr	00108$
+      000048                        104 _cgb_pal_black:
+      000048 00 00                  105 	.dw #0x0000
+      00004A 00 00                  106 	.dw #0x0000
+      00004C 00 00                  107 	.dw #0x0000
+      00004E 00 00                  108 	.dw #0x0000
+                                    109 	.area _CODE
+                                    110 	.area _INITIALIZER
+                                    111 	.area _CABS (ABS)

@@ -1,0 +1,393 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 1
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000000 L
+  4 A$gbc_hicolor$100                                              00002F GR
+  4 A$gbc_hicolor$102                                              000031 GR
+  4 A$gbc_hicolor$103                                              000032 GR
+  4 A$gbc_hicolor$104                                              000033 GR
+  4 A$gbc_hicolor$105                                              000034 GR
+  4 A$gbc_hicolor$106                                              000035 GR
+  4 A$gbc_hicolor$108                                              000037 GR
+  4 A$gbc_hicolor$109                                              000039 GR
+  4 A$gbc_hicolor$110                                              00003B GR
+  4 A$gbc_hicolor$111                                              00003D GR
+  4 A$gbc_hicolor$112                                              00003F GR
+  4 A$gbc_hicolor$113                                              000042 GR
+  4 A$gbc_hicolor$114                                              000044 GR
+  4 A$gbc_hicolor$115                                              000046 GR
+  4 A$gbc_hicolor$116                                              000047 GR
+  4 A$gbc_hicolor$118                                              000049 GR
+  4 A$gbc_hicolor$119                                              00004A GR
+  4 A$gbc_hicolor$120                                              00004B GR
+  4 A$gbc_hicolor$121                                              00004C GR
+  4 A$gbc_hicolor$122                                              00004E GR
+  4 A$gbc_hicolor$123                                              00004F GR
+  4 A$gbc_hicolor$124                                              000050 GR
+  4 A$gbc_hicolor$125                                              000051 GR
+  4 A$gbc_hicolor$126                                              000052 GR
+  4 A$gbc_hicolor$132                                              00007D GR
+  4 A$gbc_hicolor$133                                              000080 GR
+  4 A$gbc_hicolor$134                                              000081 GR
+  4 A$gbc_hicolor$135                                              000083 GR
+  4 A$gbc_hicolor$136                                              000084 GR
+  4 A$gbc_hicolor$137                                              000086 GR
+  4 A$gbc_hicolor$138                                              000089 GR
+  4 A$gbc_hicolor$139                                              00008B GR
+  4 A$gbc_hicolor$140                                              00008C GR
+  4 A$gbc_hicolor$141                                              00008E GR
+  4 A$gbc_hicolor$142                                              000091 GR
+  4 A$gbc_hicolor$143                                              000092 GR
+  4 A$gbc_hicolor$144                                              000093 GR
+  4 A$gbc_hicolor$145                                              000094 GR
+  4 A$gbc_hicolor$146                                              000096 GR
+  4 A$gbc_hicolor$147                                              000099 GR
+  4 A$gbc_hicolor$155                                              00009A GR
+  4 A$gbc_hicolor$165                                              00009B GR
+  4 A$gbc_hicolor$166                                              00009D GR
+  4 A$gbc_hicolor$167                                              00009E GR
+  4 A$gbc_hicolor$168                                              00009F GR
+  4 A$gbc_hicolor$172                                              0000A0 GR
+  4 A$gbc_hicolor$176                                              0000A1 GR
+  4 A$gbc_hicolor$177                                              0000A2 GR
+  4 A$gbc_hicolor$178                                              0000A3 GR
+  4 A$gbc_hicolor$179                                              0000A6 GR
+  4 A$gbc_hicolor$180                                              0000A9 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 2
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  4 A$gbc_hicolor$181                                              0000AA GR
+  4 A$gbc_hicolor$182                                              0000AB GR
+  4 A$gbc_hicolor$186                                              0000AC GR
+  4 A$gbc_hicolor$187                                              0000AD GR
+  4 A$gbc_hicolor$188                                              0000AE GR
+  4 A$gbc_hicolor$192                                              0000B1 GR
+  4 A$gbc_hicolor$193                                              0000B4 GR
+  4 A$gbc_hicolor$197                                              0000B5 GR
+  4 A$gbc_hicolor$198                                              0000B7 GR
+  4 A$gbc_hicolor$199                                              0000B9 GR
+  4 A$gbc_hicolor$203                                              0000BA GR
+  4 A$gbc_hicolor$204                                              0000BB GR
+  4 A$gbc_hicolor$205                                              0000BC GR
+  4 A$gbc_hicolor$206                                              0000BE GR
+  4 A$gbc_hicolor$207                                              0000BF GR
+  4 A$gbc_hicolor$208                                              0000C1 GR
+  4 A$gbc_hicolor$209                                              0000C4 GR
+  4 A$gbc_hicolor$214                                              0000C5 GR
+  4 A$gbc_hicolor$215                                              0000C8 GR
+  4 A$gbc_hicolor$216                                              0000C9 GR
+  4 A$gbc_hicolor$217                                              0000CA GR
+  4 A$gbc_hicolor$218                                              0000CB GR
+  4 A$gbc_hicolor$219                                              0000CC GR
+  4 A$gbc_hicolor$220                                              0000CF GR
+  4 A$gbc_hicolor$221                                              0000D0 GR
+  4 A$gbc_hicolor$222                                              0000D1 GR
+  4 A$gbc_hicolor$223                                              0000D2 GR
+  4 A$gbc_hicolor$227                                              0000D3 GR
+  4 A$gbc_hicolor$228                                              0000D6 GR
+  4 A$gbc_hicolor$229                                              0000D7 GR
+  4 A$gbc_hicolor$230                                              0000D8 GR
+  4 A$gbc_hicolor$231                                              0000D9 GR
+  4 A$gbc_hicolor$232                                              0000DB GR
+  4 A$gbc_hicolor$233                                              0000DC GR
+  4 A$gbc_hicolor$234                                              0000DD GR
+  4 A$gbc_hicolor$235                                              0000DE GR
+  4 A$gbc_hicolor$236                                              0000E0 GR
+  4 A$gbc_hicolor$237                                              0000E1 GR
+  4 A$gbc_hicolor$238                                              0000E2 GR
+  4 A$gbc_hicolor$239                                              0000E3 GR
+  4 A$gbc_hicolor$240                                              0000E4 GR
+  4 A$gbc_hicolor$241                                              0000E5 GR
+  4 A$gbc_hicolor$244                                              0000E6 GR
+  4 A$gbc_hicolor$245                                              0000E8 GR
+  4 A$gbc_hicolor$246                                              0000E9 GR
+  4 A$gbc_hicolor$247                                              0000EB GR
+  4 A$gbc_hicolor$248                                              0000ED GR
+  4 A$gbc_hicolor$250                                              0000EF GR
+  4 A$gbc_hicolor$251                                              0000F0 GR
+  4 A$gbc_hicolor$252                                              0000F1 GR
+  4 A$gbc_hicolor$253                                              0000F2 GR
+  4 A$gbc_hicolor$254                                              0000F3 GR
+  4 A$gbc_hicolor$256                                              0000F4 GR
+  4 A$gbc_hicolor$260                                              0000F7 GR
+  4 A$gbc_hicolor$261                                              0000F8 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 3
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  4 A$gbc_hicolor$265                                              0000FA GR
+  4 A$gbc_hicolor$266                                              0000FD GR
+  4 A$gbc_hicolor$267                                              0000FE GR
+  4 A$gbc_hicolor$268                                              0000FF GR
+  4 A$gbc_hicolor$269                                              000100 GR
+  4 A$gbc_hicolor$270                                              000102 GR
+  4 A$gbc_hicolor$271                                              000103 GR
+  4 A$gbc_hicolor$272                                              000104 GR
+  4 A$gbc_hicolor$273                                              000105 GR
+  4 A$gbc_hicolor$274                                              000107 GR
+  4 A$gbc_hicolor$275                                              000108 GR
+  4 A$gbc_hicolor$276                                              000109 GR
+  4 A$gbc_hicolor$277                                              00010A GR
+  4 A$gbc_hicolor$278                                              00010B GR
+  4 A$gbc_hicolor$279                                              00010C GR
+  4 A$gbc_hicolor$280                                              00010D GR
+  4 A$gbc_hicolor$281                                              00010E GR
+  4 A$gbc_hicolor$282                                              00010F GR
+  4 A$gbc_hicolor$283                                              000110 GR
+  4 A$gbc_hicolor$284                                              000111 GR
+  4 A$gbc_hicolor$285                                              000112 GR
+  4 A$gbc_hicolor$286                                              000113 GR
+  4 A$gbc_hicolor$287                                              000114 GR
+  4 A$gbc_hicolor$289                                              000115 GR
+  4 A$gbc_hicolor$290                                              000116 GR
+  4 A$gbc_hicolor$291                                              000118 GR
+  4 A$gbc_hicolor$292                                              00011A GR
+  4 A$gbc_hicolor$294                                              00011D GR
+  4 A$gbc_hicolor$295                                              00011E GR
+  4 A$gbc_hicolor$296                                              000120 GR
+  4 A$gbc_hicolor$297                                              000121 GR
+  4 A$gbc_hicolor$298                                              000122 GR
+  4 A$gbc_hicolor$299                                              000123 GR
+  4 A$gbc_hicolor$300                                              000124 GR
+  4 A$gbc_hicolor$301                                              000125 GR
+  4 A$gbc_hicolor$302                                              000127 GR
+  4 A$gbc_hicolor$303                                              000128 GR
+  4 A$gbc_hicolor$304                                              00012B GR
+  4 A$gbc_hicolor$308                                              00012D GR
+  4 A$gbc_hicolor$309                                              000130 GR
+  4 A$gbc_hicolor$310                                              000131 GR
+  4 A$gbc_hicolor$311                                              000132 GR
+  4 A$gbc_hicolor$312                                              000133 GR
+  4 A$gbc_hicolor$313                                              000134 GR
+  4 A$gbc_hicolor$314                                              000136 GR
+  4 A$gbc_hicolor$315                                              000137 GR
+  4 A$gbc_hicolor$316                                              000138 GR
+  4 A$gbc_hicolor$317                                              000139 GR
+  4 A$gbc_hicolor$318                                              00013A GR
+  4 A$gbc_hicolor$319                                              00013C GR
+  4 A$gbc_hicolor$320                                              00013D GR
+  4 A$gbc_hicolor$321                                              00013E GR
+  4 A$gbc_hicolor$322                                              00013F GR
+  4 A$gbc_hicolor$323                                              000140 GR
+  4 A$gbc_hicolor$324                                              000142 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 4
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  4 A$gbc_hicolor$325                                              000143 GR
+  4 A$gbc_hicolor$326                                              000144 GR
+  4 A$gbc_hicolor$327                                              000145 GR
+  4 A$gbc_hicolor$328                                              000146 GR
+  4 A$gbc_hicolor$329                                              000147 GR
+  4 A$gbc_hicolor$330                                              000149 GR
+  4 A$gbc_hicolor$331                                              00014A GR
+  4 A$gbc_hicolor$332                                              00014B GR
+  4 A$gbc_hicolor$333                                              00014C GR
+  4 A$gbc_hicolor$334                                              00014D GR
+  4 A$gbc_hicolor$335                                              000150 GR
+  4 A$gbc_hicolor$339                                              000152 GR
+  4 A$gbc_hicolor$340                                              000154 GR
+  4 A$gbc_hicolor$344                                              000156 GR
+  4 A$gbc_hicolor$345                                              000157 GR
+  4 A$gbc_hicolor$346                                              000158 GR
+  4 A$gbc_hicolor$347                                              000159 GR
+  4 A$gbc_hicolor$348                                              00015B GR
+  4 A$gbc_hicolor$349                                              00015C GR
+  4 A$gbc_hicolor$350                                              00015D GR
+  4 A$gbc_hicolor$351                                              00015E GR
+  4 A$gbc_hicolor$352                                              00015F GR
+  4 A$gbc_hicolor$353                                              000160 GR
+  4 A$gbc_hicolor$354                                              000161 GR
+  4 A$gbc_hicolor$355                                              000162 GR
+  4 A$gbc_hicolor$356                                              000163 GR
+  4 A$gbc_hicolor$357                                              000164 GR
+  4 A$gbc_hicolor$358                                              000166 GR
+  4 A$gbc_hicolor$359                                              000167 GR
+  4 A$gbc_hicolor$360                                              000169 GR
+  4 A$gbc_hicolor$361                                              00016A GR
+  4 A$gbc_hicolor$362                                              00016B GR
+  4 A$gbc_hicolor$363                                              00016C GR
+  4 A$gbc_hicolor$364                                              00016D GR
+  4 A$gbc_hicolor$365                                              00016E GR
+  4 A$gbc_hicolor$366                                              00016F GR
+  4 A$gbc_hicolor$367                                              000170 GR
+  4 A$gbc_hicolor$370                                              000171 GR
+  4 A$gbc_hicolor$371                                              000172 GR
+  4 A$gbc_hicolor$374                                              000173 GR
+  4 A$gbc_hicolor$375                                              000174 GR
+  4 A$gbc_hicolor$376                                              000176 GR
+  4 A$gbc_hicolor$377                                              000177 GR
+  4 A$gbc_hicolor$378                                              000179 GR
+  4 A$gbc_hicolor$379                                              00017A GR
+  4 A$gbc_hicolor$380                                              00017B GR
+  4 A$gbc_hicolor$381                                              00017C GR
+  4 A$gbc_hicolor$382                                              00017E GR
+  4 A$gbc_hicolor$383                                              00017F GR
+  4 A$gbc_hicolor$384                                              000182 GR
+  4 A$gbc_hicolor$389                                              000184 GR
+  4 A$gbc_hicolor$390                                              000187 GR
+  4 A$gbc_hicolor$391                                              000188 GR
+  4 A$gbc_hicolor$392                                              000189 GR
+  4 A$gbc_hicolor$393                                              00018A GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 5
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  4 A$gbc_hicolor$394                                              00018B GR
+  4 A$gbc_hicolor$395                                              00018D GR
+  4 A$gbc_hicolor$396                                              00018E GR
+  4 A$gbc_hicolor$397                                              00018F GR
+  4 A$gbc_hicolor$398                                              000190 GR
+  4 A$gbc_hicolor$399                                              000191 GR
+  4 A$gbc_hicolor$400                                              000192 GR
+  4 A$gbc_hicolor$401                                              000193 GR
+  4 A$gbc_hicolor$402                                              000195 GR
+  4 A$gbc_hicolor$403                                              000196 GR
+  4 A$gbc_hicolor$404                                              000197 GR
+  4 A$gbc_hicolor$405                                              000198 GR
+  4 A$gbc_hicolor$406                                              000199 GR
+  4 A$gbc_hicolor$407                                              00019C GR
+  4 A$gbc_hicolor$411                                              00019E GR
+  4 A$gbc_hicolor$412                                              00019F GR
+  4 A$gbc_hicolor$416                                              0001A1 GR
+  4 A$gbc_hicolor$417                                              0001A3 GR
+  4 A$gbc_hicolor$418                                              0001A4 GR
+  4 A$gbc_hicolor$419                                              0001A6 GR
+  4 A$gbc_hicolor$420                                              0001A7 GR
+  4 A$gbc_hicolor$424                                              0001AA GR
+  4 A$gbc_hicolor$428                                              0001AB GR
+  4 A$gbc_hicolor$429                                              0001AD GR
+  4 A$gbc_hicolor$433                                              0001AF GR
+  4 A$gbc_hicolor$434                                              0001B1 GR
+  4 A$gbc_hicolor$438                                              0001B3 GR
+  4 A$gbc_hicolor$439                                              0001B6 GR
+  4 A$gbc_hicolor$440                                              0001B9 GR
+  4 A$gbc_hicolor$444                                              0001BA GR
+  4 A$gbc_hicolor$445                                              0001BC GR
+  4 A$gbc_hicolor$446                                              0001BD GR
+  4 A$gbc_hicolor$447                                              0001BF GR
+  4 A$gbc_hicolor$448                                              0001C0 GR
+  4 A$gbc_hicolor$453                                              0001C3 GR
+  4 A$gbc_hicolor$458                                              0001C5 GR
+  4 A$gbc_hicolor$71                                               000000 GR
+  4 A$gbc_hicolor$72                                               000002 GR
+  4 A$gbc_hicolor$73                                               000003 GR
+  4 A$gbc_hicolor$74                                               000006 GR
+  4 A$gbc_hicolor$75                                               000007 GR
+  4 A$gbc_hicolor$76                                               000009 GR
+  4 A$gbc_hicolor$77                                               00000B GR
+  4 A$gbc_hicolor$79                                               00000E GR
+  4 A$gbc_hicolor$80                                               000011 GR
+  4 A$gbc_hicolor$81                                               000014 GR
+  4 A$gbc_hicolor$82                                               000015 GR
+  4 A$gbc_hicolor$83                                               000016 GR
+  4 A$gbc_hicolor$84                                               000017 GR
+  4 A$gbc_hicolor$85                                               000019 GR
+  4 A$gbc_hicolor$86                                               00001B GR
+  4 A$gbc_hicolor$87                                               00001C GR
+  4 A$gbc_hicolor$88                                               00001E GR
+  4 A$gbc_hicolor$89                                               00001F GR
+  4 A$gbc_hicolor$90                                               000021 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 6
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  4 A$gbc_hicolor$91                                               000022 GR
+  4 A$gbc_hicolor$92                                               000023 GR
+  4 A$gbc_hicolor$93                                               000024 GR
+  4 A$gbc_hicolor$94                                               000025 GR
+  4 A$gbc_hicolor$95                                               000026 GR
+  4 A$gbc_hicolor$96                                               000027 GR
+  4 A$gbc_hicolor$97                                               000029 GR
+  4 A$gbc_hicolor$98                                               00002B GR
+  4 A$gbc_hicolor$99                                               00002E GR
+  4 C$gbc_hicolor.c$116$1_0$137                                 =  000000 GR
+  4 C$gbc_hicolor.c$117$1_0$137                                 =  00009A GR
+  4 C$gbc_hicolor.c$125$1_0$139                                 =  00009B GR
+  4 C$gbc_hicolor.c$128$2_0$140                                 =  0000A1 GR
+  4 C$gbc_hicolor.c$129$1_0$139                                 =  0000A0 GR
+  4 C$gbc_hicolor.c$131$1_0$139                                 =  0000AC GR
+  4 C$gbc_hicolor.c$132$1_0$139                                 =  0000B1 GR
+  4 C$gbc_hicolor.c$134$2_0$141                                 =  0000B5 GR
+  4 C$gbc_hicolor.c$135$1_1$141                                 =  0000BA GR
+  4 C$gbc_hicolor.c$138$1_1$141                                 =  0000C5 GR
+  4 C$gbc_hicolor.c$141$1_1$141                                 =  0000D3 GR
+  4 C$gbc_hicolor.c$144$1_1$141                                 =  0000F7 GR
+  4 C$gbc_hicolor.c$145$1_1$141                                 =  0000FA GR
+  4 C$gbc_hicolor.c$146$1_1$141                                 =  00012D GR
+  4 C$gbc_hicolor.c$149$1_1$141                                 =  000152 GR
+  4 C$gbc_hicolor.c$150$1_1$141                                 =  000156 GR
+  4 C$gbc_hicolor.c$151$1_1$141                                 =  000184 GR
+  4 C$gbc_hicolor.c$152$1_1$141                                 =  00019E GR
+  4 C$gbc_hicolor.c$154$1_1$141                                 =  0001A1 GR
+  4 C$gbc_hicolor.c$158$2_1$142                                 =  0001AB GR
+  4 C$gbc_hicolor.c$159$2_1$142                                 =  0001AF GR
+  4 C$gbc_hicolor.c$161$2_1$142                                 =  0001B3 GR
+  4 C$gbc_hicolor.c$162$1_1$141                                 =  0001AA GR
+  4 C$gbc_hicolor.c$163$1_1$141                                 =  0001BA GR
+  4 C$gbc_hicolor.c$164$1_1$139                                 =  0001C5 GR
+  4 C$gbc_hicolor.c$20$0_0$137                                  =  000000 GR
+  1 Fgbc_hicolor$SP_SAVE$0_0$0                                  =  000000 GR
+  1 Fgbc_hicolor$STAT_SAVE$0_0$0                                =  000002 GR
+  1 Fgbc_hicolor$hicolor_last_scanline$0_0$0                    =  000006 GR
+  1 Fgbc_hicolor$hicolor_palettes_bank$0_0$0                    =  000005 GR
+  1 Fgbc_hicolor$p_hicolor_palettes$0_0$0                       =  000003 GR
+  4 G$hicolor_palette_isr$0$0                                   =  000000 GR
+  4 G$hicolor_start$0$0                                         =  00009B GR
+  4 XG$hicolor_palette_isr$0$0                                  =  00009A GR
+  4 XG$hicolor_start$0$0                                        =  0001C5 GR
+    _BCPS_REG                                                      ****** GX
+    _IE_REG                                                        ****** GX
+    _IF_REG                                                        ****** GX
+    _LYC_REG                                                       ****** GX
+    _LY_REG                                                        ****** GX
+    _SCY_REG                                                       ****** GX
+  1 _SP_SAVE                                                       000000 R
+    _STAT_REG                                                      ****** GX
+  1 _STAT_SAVE                                                     000002 R
+    _VBK_REG                                                       ****** GX
+    __current_bank                                                 ****** GX
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 7
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    _add_LCD                                                       ****** GX
+  1 _hicolor_last_scanline                                         000006 R
+  4 _hicolor_palette_isr                                           000000 GR
+  1 _hicolor_palettes_bank                                         000005 R
+  4 _hicolor_start                                                 00009B GR
+  1 _p_hicolor_palettes                                            000003 R
+    _rROMB0                                                        ****** GX
+    _remove_LCD                                                    ****** GX
+    _set_bkg_data                                                  ****** GX
+    _set_bkg_tiles                                                 ****** GX
+    _set_interrupts                                                ****** GX
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 8
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size      0   flags    0
+   1 _DATA                                      size      7   flags    0
+   2 _INITIALIZED                               size      0   flags    0
+   3 _DABS                                      size      0   flags    8
+   4 _HOME                                      size    1C6   flags    0
+   5 _GSINIT                                    size      0   flags    0
+   6 _GSFINAL                                   size      0   flags    0
+   7 _INITIALIZER                               size      0   flags    0
+   8 _CABS                                      size      0   flags    8
+

@@ -1,0 +1,61 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 1
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000000 L
+  7 C$example_image.c$13$1_0$139                                =  000000 GR
+  7 C$example_image.c$14$1_0$141                                =  001660 GR
+  7 C$example_image.c$15$1_0$143                                =  0017C8 GR
+  7 C$example_image.c$16$1_0$145                                =  001930 GR
+  7 C$example_image.c$5$0_0$134                                 =  000000 GR
+  7 G$__func_example_image$0$0                                  =  000000 GR
+  7 G$__func_example_image_attr$0$0                             =  0017C8 GR
+  7 G$__func_example_image_map$0$0                              =  001660 GR
+  7 G$__func_example_image_palette$0$0                          =  001930 GR
+  7 G$__func_example_image_tiles$0$0                            =  000000 GR
+  7 G$example_image_data$0_0$0                                  =  002B51 GR
+    ___bank_example_image                                       =  0000FF G
+    ___bank_example_image_attr                                  =  0000FF G
+    ___bank_example_image_map                                   =  0000FF G
+    ___bank_example_image_palette                               =  0000FF G
+    ___bank_example_image_tiles                                 =  0000FF G
+  7 ___func_example_image                                          000000 GR
+  7 ___func_example_image_attr                                     0017C8 GR
+  7 ___func_example_image_map                                      001660 GR
+  7 ___func_example_image_palette                                  001930 GR
+  7 ___func_example_image_tiles                                    000000 GR
+    ___size_example_image_attr                                  =  000168 G
+    ___size_example_image_map                                   =  000168 G
+    ___size_example_image_palette                               =  001221 G
+    ___size_example_image_tiles                                 =  001660 G
+  7 _example_image_attr                                            0017C8 GR
+  7 _example_image_data                                            002B51 GR
+  7 _example_image_map                                             001660 GR
+  7 _example_image_palette                                         001930 GR
+  7 _example_image_tiles                                           000000 GR
+    b___func_example_image                                      =  0000FF L
+    b___func_example_image_attr                                 =  0000FF L
+    b___func_example_image_map                                  =  0000FF L
+    b___func_example_image_palette                              =  0000FF L
+    b___func_example_image_tiles                                =  0000FF L
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 2
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size      0   flags    0
+   1 _DATA                                      size      0   flags    0
+   2 _INITIALIZED                               size      0   flags    0
+   3 _DABS                                      size      0   flags    8
+   4 _HOME                                      size      0   flags    0
+   5 _GSINIT                                    size      0   flags    0
+   6 _GSFINAL                                   size      0   flags    0
+   7 _CODE_255                                  size   2B5C   flags    0
+   8 _INITIALIZER                               size      0   flags    0
+   9 _CABS                                      size      0   flags    8
+

@@ -1,0 +1,224 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler 
+                                      3 ; Version 4.3.2 #14228 (Linux)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module test_pattern_short
+                                      6 	.optsdcc -msm83
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _test_pattern_short_data
+                                     12 	.globl b___func_test_pattern_short_palette
+                                     13 	.globl ___func_test_pattern_short_palette
+                                     14 	.globl b___func_test_pattern_short_attr
+                                     15 	.globl ___func_test_pattern_short_attr
+                                     16 	.globl b___func_test_pattern_short_map
+                                     17 	.globl ___func_test_pattern_short_map
+                                     18 	.globl b___func_test_pattern_short_tiles
+                                     19 	.globl ___func_test_pattern_short_tiles
+                                     20 	.globl b___func_test_pattern_short
+                                     21 	.globl ___func_test_pattern_short
+                                     22 ;--------------------------------------------------------
+                                     23 ; special function registers
+                                     24 ;--------------------------------------------------------
+                                     25 ;--------------------------------------------------------
+                                     26 ; ram data
+                                     27 ;--------------------------------------------------------
+                                     28 	.area _DATA
+                                     29 ;--------------------------------------------------------
+                                     30 ; ram data
+                                     31 ;--------------------------------------------------------
+                                     32 	.area _INITIALIZED
+                                     33 ;--------------------------------------------------------
+                                     34 ; absolute external ram data
+                                     35 ;--------------------------------------------------------
+                                     36 	.area _DABS (ABS)
+                                     37 ;--------------------------------------------------------
+                                     38 ; global & static initialisations
+                                     39 ;--------------------------------------------------------
+                                     40 	.area _HOME
+                                     41 	.area _GSINIT
+                                     42 	.area _GSFINAL
+                                     43 	.area _GSINIT
+                                     44 ;--------------------------------------------------------
+                                     45 ; Home
+                                     46 ;--------------------------------------------------------
+                                     47 	.area _HOME
+                                     48 	.area _HOME
+                                     49 ;--------------------------------------------------------
+                                     50 ; code
+                                     51 ;--------------------------------------------------------
+                                     52 	.area _CODE_255
+                           000000    53 	G$__func_test_pattern_short$0$0	= .
+                                     54 	.globl	G$__func_test_pattern_short$0$0
+                           000000    55 	C$test_pattern_short.c$5$0_0$134	= .
+                                     56 	.globl	C$test_pattern_short.c$5$0_0$134
+                                     57 ;obj/test_pattern_short.c:5: BANKREF(test_pattern_short)
+                                     58 ;	---------------------------------
+                                     59 ; Function __func_test_pattern_short
+                                     60 ; ---------------------------------
+                           0000FF    61 	b___func_test_pattern_short	= 255
+      000000                         62 ___func_test_pattern_short::
+                                     63 	.local b___func_test_pattern_short 
+                           0000FF    64 	___bank_test_pattern_short = b___func_test_pattern_short 
+                                     65 	.globl ___bank_test_pattern_short 
+                           000000    66 	G$__func_test_pattern_short_tiles$0$0	= .
+                                     67 	.globl	G$__func_test_pattern_short_tiles$0$0
+                           000000    68 	C$test_pattern_short.c$13$1_0$139	= .
+                                     69 	.globl	C$test_pattern_short.c$13$1_0$139
+                                     70 ;obj/test_pattern_short.c:13: INCBIN(test_pattern_short_tiles,   "obj/test_pattern_short.til")
+                                     71 ;	---------------------------------
+                                     72 ; Function __func_test_pattern_short_tiles
+                                     73 ; ---------------------------------
+                           0000FF    74 	b___func_test_pattern_short_tiles	= 255
+      000000                         75 ___func_test_pattern_short_tiles::
+      000000                         76 _test_pattern_short_tiles::
+      000000                         77 1$:
+      000000 FF FE 00 00 00 00 80    78 	.incbin "obj/test_pattern_short.til" 
+             7C F8 07 3F C1 03 FC
+             FF E0 FF 00 0F 0F 01
+             01 00 01 00 80 F0 F0
+             FE 1E 80 7E C0 3F F8
+             87 FE E1 1F E3 07 38
+             0F 0F 01 01 00 00 E3
+             01 C0 03 9A 19 B8 83
+             8B 83 08 80 3E 00 7C
+             00 C0 FF 00 FF 00 FF
+             00 FF 00 FF FF FF 3F
+             FF 3F FF FF 00 00 03
+             00 01 00 0F 00 03 00
+             01 00 00 00 01 E0 1F
+             07 F8 03 FC 1F E0 0F
+             F0 07 F8 01 7E 03 FC
+             00 FF FF 0F FF 07 FF
+             7F FF 3F FF 1F FF 0F
+             FF 1F
+      0008C0                         79 2$:
+                           0008C0    80 	___size_test_pattern_short_tiles = (2$-1$) 
+                                     81 	.globl ___size_test_pattern_short_tiles 
+                                     82 	.local b___func_test_pattern_short_tiles 
+                           0000FF    83 	___bank_test_pattern_short_tiles = b___func_test_pattern_short_tiles 
+                                     84 	.globl ___bank_test_pattern_short_tiles 
+                           0008C0    85 	G$__func_test_pattern_short_map$0$0	= .
+                                     86 	.globl	G$__func_test_pattern_short_map$0$0
+                           0008C0    87 	C$test_pattern_short.c$14$1_0$141	= .
+                                     88 	.globl	C$test_pattern_short.c$14$1_0$141
+                                     89 ;obj/test_pattern_short.c:14: INCBIN(test_pattern_short_map,     "obj/test_pattern_short.map")
+                                     90 ;	---------------------------------
+                                     91 ; Function __func_test_pattern_short_map
+                                     92 ; ---------------------------------
+                           0000FF    93 	b___func_test_pattern_short_map	= 255
+      0008C0                         94 ___func_test_pattern_short_map::
+      0008C0                         95 _test_pattern_short_map::
+      0008C0                         96 1$:
+      0008C0 00 01 02 03 04 05 06    97 	.incbin "obj/test_pattern_short.map" 
+             07 08 09 0A 0B 0C 0D
+             0E 0F 10 11 12 13 14
+             15 16 17 18 19 1A 1B
+             1C 1D 1E 1F 20 21 22
+             23 24 25 26 27 28 29
+             2A 2B 2C 2D 2E 2F 30
+             31 32 33 34 35 36 37
+             38 39 3A 3B 3C 3D 3E
+             3F 40 41 42 43 44 45
+             46 47 48 49 4A 4B 4C
+             4D 4E 4F 50 51 52 53
+             54 55 56 57 58 59 5A
+             5B 5C 5D 5E 5F 60 61
+             62 63 64 65 66 67 68
+             69 6A 6B 6C 6D 6E 6F
+             70 71 72 73 74 75 76
+             77 78 79 7A 7B 7C 7D
+             7E 7F
+      00094C                         98 2$:
+                           00008C    99 	___size_test_pattern_short_map = (2$-1$) 
+                                    100 	.globl ___size_test_pattern_short_map 
+                                    101 	.local b___func_test_pattern_short_map 
+                           0000FF   102 	___bank_test_pattern_short_map = b___func_test_pattern_short_map 
+                                    103 	.globl ___bank_test_pattern_short_map 
+                           00094C   104 	G$__func_test_pattern_short_attr$0$0	= .
+                                    105 	.globl	G$__func_test_pattern_short_attr$0$0
+                           00094C   106 	C$test_pattern_short.c$15$1_0$143	= .
+                                    107 	.globl	C$test_pattern_short.c$15$1_0$143
+                                    108 ;obj/test_pattern_short.c:15: INCBIN(test_pattern_short_attr,    "obj/test_pattern_short.atr")
+                                    109 ;	---------------------------------
+                                    110 ; Function __func_test_pattern_short_attr
+                                    111 ; ---------------------------------
+                           0000FF   112 	b___func_test_pattern_short_attr	= 255
+      00094C                        113 ___func_test_pattern_short_attr::
+      00094C                        114 _test_pattern_short_attr::
+      00094C                        115 1$:
+      00094C 00 00 00 01 01 02 02   116 	.incbin "obj/test_pattern_short.atr" 
+             02 03 03 04 04 05 05
+             05 06 06 07 07 07 00
+             00 00 01 01 02 02 02
+             03 03 04 04 04 05 05
+             06 06 07 07 07 00 00
+             00 01 01 02 02 02 03
+             03 04 04 05 05 06 06
+             07 07 07 07 00 00 00
+             01 01 02 02 02 03 03
+             04 04 05 05 06 06 06
+             07 07 07 00 00 00 01
+             01 02 02 02 03 03 04
+             04 05 05 06 06 07 07
+             07 07 00 00 00 01 01
+             02 02 02 03 03 04 04
+             05 05 06 06 06 07 07
+             07 00 00 00 01 01 02
+             02 02
+      0009D8                        117 2$:
+                           00008C   118 	___size_test_pattern_short_attr = (2$-1$) 
+                                    119 	.globl ___size_test_pattern_short_attr 
+                                    120 	.local b___func_test_pattern_short_attr 
+                           0000FF   121 	___bank_test_pattern_short_attr = b___func_test_pattern_short_attr 
+                                    122 	.globl ___bank_test_pattern_short_attr 
+                           0009D8   123 	G$__func_test_pattern_short_palette$0$0	= .
+                                    124 	.globl	G$__func_test_pattern_short_palette$0$0
+                           0009D8   125 	C$test_pattern_short.c$16$1_0$145	= .
+                                    126 	.globl	C$test_pattern_short.c$16$1_0$145
+                                    127 ;obj/test_pattern_short.c:16: INCBIN(test_pattern_short_palette, "obj/test_pattern_short.pal")
+                                    128 ;	---------------------------------
+                                    129 ; Function __func_test_pattern_short_palette
+                                    130 ; ---------------------------------
+                           0000FF   131 	b___func_test_pattern_short_palette	= 255
+      0009D8                        132 ___func_test_pattern_short_palette::
+      0009D8                        133 _test_pattern_short_palette::
+      0009D8                        134 1$:
+      0009D8 00 00 E8 04 2B 05 A4   135 	.incbin "obj/test_pattern_short.pal" 
+             00 00 00 4D 09 D1 0D
+             8F 09 00 00 35 16 D9
+             22 6D 09 00 00 56 1A
+             1A 2B B8 22 76 1A 1B
+             2B 5C 2F D9 22 1B 2B
+             9D 37 5C 2F BE 37 97
+             1E F9 26 1A 2B B8 22
+             34 16 76 1A 55 16 35
+             16 A5 00 09 05 2B 05
+             E7 04 20 04 2B 09 8F
+             09 65 49 F3 11 B8 1E
+             56 16 FA 26 56 1A FA
+             26 98 1E 1A 2B 76 1A
+             1A 2B 7C 33 D9 22 1A
+             2B 9D 37 3C 2F BE 37
+             76 1A D9 26 B8 22 97
+             1E 13 12 55 1A 35 16
+             34 16
+      0010F9                        136 2$:
+                           000721   137 	___size_test_pattern_short_palette = (2$-1$) 
+                                    138 	.globl ___size_test_pattern_short_palette 
+                                    139 	.local b___func_test_pattern_short_palette 
+                           0000FF   140 	___bank_test_pattern_short_palette = b___func_test_pattern_short_palette 
+                                    141 	.globl ___bank_test_pattern_short_palette 
+                                    142 	.area _CODE_255
+                           0010F9   143 G$test_pattern_short_data$0_0$0 == .
+      0010F9                        144 _test_pattern_short_data:
+      0010F9 8C 00                  145 	.dw #0x008c
+      0010FB 07                     146 	.db #0x07	; 7
+      0010FCr00r00                  147 	.dw _test_pattern_short_tiles
+      0010FErC0r08                  148 	.dw _test_pattern_short_map
+      001100r4Cr09                  149 	.dw _test_pattern_short_attr
+      001102rD8r09                  150 	.dw _test_pattern_short_palette
+                                    151 	.area _INITIALIZER
+                                    152 	.area _CABS (ABS)
